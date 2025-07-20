@@ -26,12 +26,12 @@
 - test_size=0.2, random_state=42
 
 ### 모델별 성능 요약 (양성 예측 기준)
-| 모델                  | Recall (재현율) | Precision (정밀도) | F1-score | ROC-AUC |
+| 모델                  | Recall (재현율) | Precision (정밀도) | F1-score | ROC-AUC (전체) |
 | ------------------- | ------------ | --------------- | -------- | ------- |
-| Logistic Regression | 낮음 (0.67)    | 높음    0.90          | 보통    0.77   |   |
-| Random Forest       | 0.82        | 우수     0.96         | 우수    0.88   |    |
+| Logistic Regression | 낮음 (0.67)    | 높음    0.90          | 보통    0.77   | 0.976  |
+| Random Forest       | 0.82        | 우수     0.96         | 우수    0.88   |  0.943  |
 | **XGBoost**         | **0.81**     | **0.95**        | **0.94** | **최고** 0.978 |
-| LightGBM            | 0.63      | 0.28             | 0.38      | 0.779      |
+| LightGBM            | 0.63      | 0.28             | 0.38      | 0.729      |
 
 
 XGBoost가 전반적으로 가장 뛰어난 성능을 보여줌
@@ -39,8 +39,8 @@ XGBoost가 전반적으로 가장 뛰어난 성능을 보여줌
 ## 4. Threshold 튜닝 (XGBoost 기준)
 기본 threshold = 0.5   
 
-- F1-score = 0.8889
-- ROC-AUC = 약 0.98
+- F1-score = 0.88
+- ROC-AUC = 0.971
 
 최적 threshold 탐색 (Precision-Recall Curve 기반)
 
@@ -66,9 +66,9 @@ threshold를 낮추면 더 많은 사기를 잡을 수 있음 (Recall 증가) �
 | 모델               | Precision | Recall   | F1-score | ROC-AUC |
 | ---------------- | --------- | -------- | -------- | ------- |
 | XGBoost (SMOTE)  | 0.85      | **0.87** | 0.86     | 0.974    |
-| LightGBM (SMOTE) | 0.70      | **0.85** | 0.90     | 0.975    |
-| Logistic Regression |  0.09   | 0.87        |   0.17   |  |
-| Random Forest       |  0.92      |    0.82       | 0.86   |    |
+| LightGBM (SMOTE) | 0.70      | **0.85** |0.76     | 0.975    |
+| Logistic Regression |  0.09   | 0.87        |   0.17   | 0.969  |
+| Random Forest       |  0.92      |    0.82       | 0.86   |  0.964  |
 
 SMOTE 적용 시 Recall(재현율)이 눈에 띄게 상승, 사기 탐지에 더 민감해짐   
 
