@@ -15,7 +15,7 @@
 | ----- | ------------------------------------------------------- |
 | 범주형   | `season`, `holiday`, `workingday`, `weather`            |
 | 수치형   | `temp`, `atemp`, `humidity`, `windspeed`, `count`       |
-| 파생 | `datetime` → `year`, `month`, `hour`, `weekday`, `date` |
+| 파생 | `datetime` -> `year`, `month`, `hour`, `weekday`, `date` |
 
 ### 상관관계 분석
 - temp와 atemp는 매우 높은 상관관계(> 0.99)
