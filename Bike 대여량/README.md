@@ -84,3 +84,6 @@ colsample_bytree=0.8
 - GridSearchCV로 LGBM 하이퍼파라미터 최적화
 - 변수 중요도 해석 강화
 
+### 캐글 제출 결과
+
+0.38906 으로 약 155등
